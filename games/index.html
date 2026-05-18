@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>R.I.P.</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: black;
+            color: white;
+            height: 100vh;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .screen {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 2s ease;
+        }
+
+        .show {
+            opacity: 1;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            color: #bfbfbf;
+        }
+
+        .thanks {
+            font-size: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- First Screen -->
+    <div class="screen show" id="ripScreen">
+        <h1>R.I.P. ciperuoy.github.io</h1>
+        <p>2/3/26 - 5/12/26</p>
+    </div>
+
+    <!-- Second Screen -->
+    <div class="screen" id="thanksScreen">
+        <h1 class="thanks">Thanks Platano.</h1>
+    </div>
+
+    <script>
+        const ripScreen = document.getElementById("ripScreen");
+        const thanksScreen = document.getElementById("thanksScreen");
+
+        // After 3 seconds, fade out RIP screen
+        setTimeout(() => {
+            ripScreen.classList.remove("show");
+        }, 3000);
+
+        // After another 3 seconds, fade in Thanks screen
+        setTimeout(() => {
+            thanksScreen.classList.add("show");
+        }, 6000);
+    </script>
+
+</body>
+</html>
